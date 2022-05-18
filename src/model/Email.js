@@ -1,4 +1,4 @@
-class Email{
+export default class Email{
     localPart;
     domain;
     complete;

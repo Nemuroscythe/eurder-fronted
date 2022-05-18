@@ -1,4 +1,4 @@
-class PhoneNumber {
+export default class PhoneNumber {
     number;
     countryCallingCode;
 

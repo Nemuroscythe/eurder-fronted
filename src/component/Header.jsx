@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 
 export default function Header() {
     return (<>
@@ -10,8 +9,15 @@ export default function Header() {
                     ÖRDER
                 </a>
 
-                <div className="container-fluid">
-                    {/*<button type="button"><Link to="/create-customer">Navigation</Link></button>*/}
+                <div className="">
+                    <ul className="nav nav-pills">
+                        <li className="nav-item">
+                            <a className="nav-link" href="#items">Items</a>
+                            <a className="nav-link" href="#customers">Customers</a>
+                            <a className="nav-link" href="#basket">Basket</a>
+                            <a className="nav-link" href="#menu">Menu</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

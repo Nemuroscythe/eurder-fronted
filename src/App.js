@@ -10,9 +10,9 @@ function App() {
             <Header/>
             <BrowserRouter>
                 <Routes>
-                    <Route path={"/"} component={CreateCustomer}/>
-                    <Route path={"/create-customer"} component={CreateCustomer}/>
-                    <Route path={"*"} component={CreateCustomer}/>
+                    <Route path={"/"} element={<CreateCustomer/>}/>
+                    <Route path={"/create-customer"} element={<CreateCustomer/>}/>
+                    <Route path={"*"} element={<CreateCustomer/>}/>
                 </Routes>
             </BrowserRouter>
             <Footer/>

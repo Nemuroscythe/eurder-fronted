@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Col, Container, Form, InputGroup, Row} from "react-bootstrap";
+import {Button, ButtonGroup, Col, Container, Form, InputGroup, Row} from "react-bootstrap";
 
 export default function CreateCustomer() {
 
@@ -24,11 +24,13 @@ export default function CreateCustomer() {
                     <Row className="mb-3">
                         <Form.Group as={Col} md="6" controlId="formFirstname">
                             <Form.Label column={true} className={"col-1"}>Firstname</Form.Label>
-                            <Form.Control type="text"/>
+                            <Form.Control type="text" required/>
+                            <Form.Control.Feedback type={"invalid"}>Please provide a firstname</Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group as={Col} md="6" controlId="formLastname">
                             <Form.Label column={true} className={"col-1"}>Lastname</Form.Label>
-                            <Form.Control type="text"/>
+                            <Form.Control type="text" required/>
+                            <Form.Control.Feedback type={"invalid"}>Please provide a lastname</Form.Control.Feedback>
                         </Form.Group>
                     </Row>
 
@@ -39,6 +41,7 @@ export default function CreateCustomer() {
                                 <Form.Control type="email"/>
                                 <InputGroup.Text>@</InputGroup.Text>
                                 <Form.Control type="email"/>
+                                <Form.Control.Feedback type={"invalid"}>Please provide an email address</Form.Control.Feedback>
                             </InputGroup>
                         </Form.Group>
                     </Row>
@@ -50,11 +53,13 @@ export default function CreateCustomer() {
                                 <Col xs={3}>
                                     <InputGroup>
                                         <InputGroup.Text>+</InputGroup.Text>
-                                        <Form.Control type="text"/>
+                                        <Form.Control type="text" required/>
+                                        <Form.Control.Feedback type={"invalid"}>Please provide a country code</Form.Control.Feedback>
                                     </InputGroup>
                                 </Col>
                                 <Col xs={9}>
-                                    <Form.Control type="text"/>
+                                    <Form.Control type="text" required/>
+                                    <Form.Control.Feedback type={"invalid"}>Please provide a phone number</Form.Control.Feedback>
                                 </Col>
                             </InputGroup>
                         </Form.Group>
@@ -63,18 +68,21 @@ export default function CreateCustomer() {
                     <Row className="md3">
                         <Form.Group as={Col} md="10" controlId="formStreetName">
                             <Form.Label>Street</Form.Label>
-                            <Form.Control type="text"/>
+                            <Form.Control type="text" required/>
+                            <Form.Control.Feedback type={"invalid"}>Please provide a street name</Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group as={Col} md="2" controlId="formStreetNumber">
                             <Form.Label>Number</Form.Label>
-                            <Form.Control type="text"/>
+                            <Form.Control type="text" required/>
+                            <Form.Control.Feedback type={"invalid"}>Please provide a street number</Form.Control.Feedback>
                         </Form.Group>
                     </Row>
 
                     <Row className="md3">
                         <Form.Group as={Col} md="5" controlId="formPostalCode">
                             <Form.Label>Postalcode</Form.Label>
-                            <Form.Control type="text"/>
+                            <Form.Control type="text" required/>
+                            <Form.Control.Feedback type={"invalid"}>Please provide a postal code</Form.Control.Feedback>
                         </Form.Group>
 
                         <Form.Group as={Col} md="7" controlId="formCountry">
@@ -87,16 +95,22 @@ export default function CreateCustomer() {
                         </Form.Group>
                     </Row>
 
-                    <Row className="md3">
-                        <Button as={Col} md="9" variant="success" type="submit">
-                            CREATE
-                        </Button>
-
-                        <Button as={Col} md="2" variant="light" type="reset">
-                            CANCEL
-                        </Button>
+                    <Row>
+                        <Col md={10} size={'lg'}>
+                            <ButtonGroup className="d-flex">
+                                <Button variant="success" type="submit">
+                                    CREATE
+                                </Button>
+                            </ButtonGroup>
+                        </Col>
+                        <Col md={2}>
+                            <ButtonGroup className="d-flex">
+                                <Button variant="light" type="reset">
+                                    CANCEL
+                                </Button>
+                            </ButtonGroup>
+                        </Col>
                     </Row>
-
                 </Form>
             </Container>
         </>
